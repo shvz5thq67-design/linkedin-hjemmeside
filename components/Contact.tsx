@@ -23,15 +23,15 @@ export default function Contact() {
         form.reset();
       }
     } catch {
-      // fail silently — form submission is non-critical
+      // fail silently
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 bg-[#0a0f1e] relative overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-[#2dd4bf]/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="contact" className="py-32 px-6 md:px-16 bg-[#0a0f1e] relative overflow-hidden">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-80 bg-[#2dd4bf]/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-2xl mx-auto text-center relative z-10">
         <motion.div
@@ -40,20 +40,20 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#2dd4bf] text-sm tracking-widest uppercase mb-3">Contact</p>
-          <h2 className="font-serif text-5xl md:text-6xl font-black text-[#f0ede8] mb-4">
+          <p className="text-[#2dd4bf] text-sm tracking-widest uppercase mb-4">Contact</p>
+          <h2 className="font-serif text-6xl md:text-7xl font-black text-[#f0ede8] mb-5">
             Let&apos;s talk.
           </h2>
 
-          <div className="flex items-center justify-center gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-[#f0ede8]/50 text-sm">Currently open to new roles</span>
+          <div className="flex items-center justify-center gap-2 mb-10">
+            <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-[#f0ede8]/50 text-base">Currently open to new roles</span>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
             <a
               href="mailto:christianschouu@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-[#f0ede8]/70 hover:border-[#2dd4bf]/40 hover:text-[#2dd4bf] transition-all duration-200 text-sm"
+              className="flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-white/10 text-[#f0ede8]/70 hover:border-[#2dd4bf]/50 hover:text-[#2dd4bf] hover:bg-[#2dd4bf]/5 transition-all duration-200 text-sm"
             >
               ✉ christianschouu@gmail.com
             </a>
@@ -61,7 +61,7 @@ export default function Contact() {
               href="https://linkedin.com/in/christian-schou-0b7361147"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-[#f0ede8]/70 hover:border-[#2dd4bf]/40 hover:text-[#2dd4bf] transition-all duration-200 text-sm"
+              className="flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-white/10 text-[#f0ede8]/70 hover:border-[#2dd4bf]/50 hover:text-[#2dd4bf] hover:bg-[#2dd4bf]/5 transition-all duration-200 text-sm"
             >
               in LinkedIn
             </a>
@@ -81,27 +81,27 @@ export default function Contact() {
               name="name"
               required
               placeholder="Your name"
-              className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/8 text-[#f0ede8] placeholder-[#f0ede8]/30 text-sm outline-none focus:border-[#2dd4bf]/40 transition-colors"
+              className="px-5 py-4 rounded-2xl bg-white/[0.04] border border-white/8 text-[#f0ede8] placeholder-[#f0ede8]/30 text-sm outline-none focus:border-[#2dd4bf]/40 transition-colors"
             />
             <input
               name="email"
               type="email"
               required
               placeholder="Your email"
-              className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/8 text-[#f0ede8] placeholder-[#f0ede8]/30 text-sm outline-none focus:border-[#2dd4bf]/40 transition-colors"
+              className="px-5 py-4 rounded-2xl bg-white/[0.04] border border-white/8 text-[#f0ede8] placeholder-[#f0ede8]/30 text-sm outline-none focus:border-[#2dd4bf]/40 transition-colors"
             />
           </div>
           <textarea
             name="message"
             required
-            rows={4}
+            rows={5}
             placeholder="What's on your mind?"
-            className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/8 text-[#f0ede8] placeholder-[#f0ede8]/30 text-sm outline-none focus:border-[#2dd4bf]/40 transition-colors resize-none"
+            className="px-5 py-4 rounded-2xl bg-white/[0.04] border border-white/8 text-[#f0ede8] placeholder-[#f0ede8]/30 text-sm outline-none focus:border-[#2dd4bf]/40 transition-colors resize-none"
           />
           <button
             type="submit"
             disabled={loading || sent}
-            className="w-full py-3.5 rounded-xl bg-[#2dd4bf] text-[#0a0f1e] font-semibold text-sm hover:bg-[#2dd4bf]/90 transition-all duration-200 disabled:opacity-60"
+            className="w-full py-4 rounded-2xl bg-[#2dd4bf] text-[#0a0f1e] font-bold text-base hover:bg-[#2dd4bf]/90 transition-all duration-200 disabled:opacity-60 hover:scale-[1.01]"
           >
             {sent ? '✓ Message sent!' : loading ? 'Sending...' : 'Send message →'}
           </button>

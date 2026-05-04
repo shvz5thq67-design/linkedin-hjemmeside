@@ -13,20 +13,20 @@ const TIMELINE = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 md:px-12 max-w-6xl mx-auto">
+    <section id="about" className="py-32 px-6 md:px-16 max-w-7xl mx-auto w-full">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mb-16"
+        className="mb-20"
       >
-        <p className="text-[#2dd4bf] text-sm tracking-widest uppercase mb-3">About</p>
-        <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#f0ede8]">The person behind the work.</h2>
+        <p className="text-[#2dd4bf] text-sm tracking-widest uppercase mb-4">About</p>
+        <h2 className="font-serif text-5xl md:text-6xl font-bold text-[#f0ede8]">The person behind the work.</h2>
       </motion.div>
 
       {/* Two-column layout */}
-      <div className="grid md:grid-cols-2 gap-14 items-start mb-20">
+      <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -34,17 +34,28 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="flex justify-center md:justify-start"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#2dd4bf]/30 via-[#60a5fa]/20 to-transparent p-1 rounded-full">
+          <div className="relative w-80 h-80 md:w-[420px] md:h-[420px]">
+            {/* Gradient ring */}
+            <div
+              className="absolute inset-0 rounded-full"
+              style={{
+                background: 'conic-gradient(from 180deg, #2dd4bf40, #60a5fa30, #a78bfa20, #2dd4bf40)',
+                padding: '3px',
+                borderRadius: '50%',
+              }}
+            >
               <div className="w-full h-full rounded-full overflow-hidden bg-[#0d1526]">
                 <Image
                   src="/christian-schou.png"
                   alt="Christian Schou"
                   fill
-                  className="object-cover object-top rounded-full"
+                  className="object-cover object-top"
+                  priority
                 />
               </div>
             </div>
+            {/* Glow */}
+            <div className="absolute inset-0 rounded-full bg-[#2dd4bf]/8 blur-2xl -z-10 scale-110" />
           </div>
         </motion.div>
 
@@ -55,17 +66,17 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex flex-col justify-center"
         >
-          <p className="text-[#f0ede8]/70 text-lg leading-relaxed mb-6">
+          <p className="text-[#f0ede8]/75 text-xl leading-relaxed mb-6">
             I&apos;m a Product Owner and AI consultant based in Aarhus. I&apos;ve spent years driving digital transformation at Maersk and DP World — and building my own ventures.
           </p>
-          <p className="text-[#f0ede8]/70 text-lg leading-relaxed mb-8">
+          <p className="text-[#f0ede8]/75 text-xl leading-relaxed mb-10">
             I&apos;m at my best when technology meets business strategy, and when AI becomes a real tool, not just a buzzword. The best IT solutions start with thorough analysis — and that&apos;s exactly where I focus.
           </p>
           <div className="flex flex-wrap gap-3">
             {['Product Owner', 'AI Strategy', 'Data-Driven', 'Agile', 'Builder'].map((tag) => (
               <span
                 key={tag}
-                className="px-4 py-1.5 rounded-full text-sm border border-[#2dd4bf]/25 text-[#2dd4bf]/80"
+                className="px-5 py-2 rounded-full text-sm border border-[#2dd4bf]/25 text-[#2dd4bf]/80 bg-[#2dd4bf]/5"
               >
                 {tag}
               </span>
@@ -81,8 +92,8 @@ export default function About() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h3 className="font-serif text-2xl text-[#f0ede8] mb-8">Journey</h3>
-        <div className="relative border-l border-[#2dd4bf]/20 pl-8 flex flex-col gap-8">
+        <h3 className="font-serif text-3xl text-[#f0ede8] mb-10">Journey</h3>
+        <div className="relative border-l-2 border-[#2dd4bf]/15 pl-10 flex flex-col gap-10">
           {TIMELINE.map((item, i) => (
             <motion.div
               key={i}
@@ -92,9 +103,9 @@ export default function About() {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="relative"
             >
-              <div className="absolute -left-[2.15rem] top-1 w-3 h-3 rounded-full bg-[#2dd4bf] ring-4 ring-[#0a0f1e]" />
-              <span className="text-[#2dd4bf] text-xs font-mono font-semibold">{item.year}</span>
-              <p className="text-[#f0ede8]/70 text-sm mt-0.5 leading-snug">{item.event}</p>
+              <div className="absolute -left-[2.6rem] top-1.5 w-4 h-4 rounded-full bg-[#2dd4bf] ring-4 ring-[#0a0f1e]" />
+              <span className="text-[#2dd4bf] text-sm font-mono font-bold">{item.year}</span>
+              <p className="text-[#f0ede8]/65 text-base mt-1 leading-snug">{item.event}</p>
             </motion.div>
           ))}
         </div>
