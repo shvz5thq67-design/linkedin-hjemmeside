@@ -46,7 +46,7 @@ export default function About() {
             >
               <div className="w-full h-full rounded-full overflow-hidden bg-[#0d1526]">
                 <Image
-                  src="/christian-schou.png"
+                  src="/christian-schou.jpg"
                   alt="Christian Schou"
                   fill
                   className="object-cover object-top"
